@@ -16,7 +16,7 @@ def read_item(access_token: str):
 
     headers = {"Authorization": "Bearer " + access_token}
     result = requests.get(
-        "https://api.airtable.com/v0/app61I7CwlK0gHEIX/jobs?maxRecords=50&sort%5B0%5D%5Bfield%5D=creation_date&sort%5B0%5D%5Bdirection%5D=desc&view=Free%20users%20view&fields=Name,company,location,remote_string,days_ago_text",
+        "https://api.airtable.com/v0/app61I7CwlK0gHEIX/jobs?maxRecords=50&sort%5B0%5D%5Bfield%5D=creation_date&sort%5B0%5D%5Bdirection%5D=desc&view=Free%20users%20view&fields[]=Name&fields[]=company&fields[]=location&fields[]=remote_string&fields[]=days_ago_text&fields[]=job_detail_url",
         headers=headers,
     )
     return result.json()
